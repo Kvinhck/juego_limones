@@ -11,7 +11,7 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
-let velocidadCaida=20;
+let velocidadCaida=200;
 
 
 function iniciar(){
@@ -67,10 +67,16 @@ function bajarLimon(){
 
 function detectarAtrapado(){
     if(((limonX+ANCHO_LIMON)>personajeX && limonX<(personajeX+ANCHO_PERSONAJE)) && ((limonY+ALTO_LIMON)>personajeY && limonY<(personajeY+ALTURA_PERSONAJE))){
-        //alert("ATRAPADAAAAAA AYUDAAAAAA");
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarSpan("txtPuntaje",puntaje);
+        if(puntaje==3){
+            velocidadCaida=150;
+        }else if(puntaje==6){
+            velocidadCaida=100;
+        }else if(puntaje==10){
+            alert("¡Proceso perfecto! Cosechaste suficientes limones para una ronda interminable de tequilas. 🍋🥃 ¡Salud al campeón!");
+        }
     }
 }
 
