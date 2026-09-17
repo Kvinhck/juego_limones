@@ -11,9 +11,11 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
+let velocidadCaida=20;
 
 
 function iniciar(){
+    setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     pintarLimon();
@@ -77,6 +79,9 @@ function detectarPiso(){
         aparecerLimon();
         vidas=vidas-1;
         mostrarSpan("txtVidas",vidas);
+    }
+    if(vidas==0){
+        alert("Game Over");
     }
 }
 
