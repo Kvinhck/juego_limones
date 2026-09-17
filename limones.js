@@ -15,7 +15,7 @@ let velocidadCaida=200;
 
 
 function iniciar(){
-    setInterval(bajarLimon,velocidadCaida);
+    let intervalo=setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     pintarLimon();
@@ -76,6 +76,7 @@ function detectarAtrapado(){
             velocidadCaida=100;
         }else if(puntaje==10){
             alert("¡Proceso perfecto! Cosechaste suficientes limones para una ronda interminable de tequilas. 🍋🥃 ¡Salud al campeón!");
+            clearInterval(intervalo);
         }
     }
 }
@@ -88,6 +89,7 @@ function detectarPiso(){
     }
     if(vidas==0){
         alert("Game Over");
+        clearInterval(intervalo);
     }
 }
 
