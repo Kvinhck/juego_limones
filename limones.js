@@ -12,10 +12,11 @@ let limonY=0;
 let puntaje=0;
 let vidas=3;
 let velocidadCaida=200;
+let intervalo;
 
 
 function iniciar(){
-    let intervalo=setInterval(bajarLimon,velocidadCaida);
+    intervalo=setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     pintarLimon();
@@ -72,8 +73,12 @@ function detectarAtrapado(){
         mostrarSpan("txtPuntaje",puntaje);
         if(puntaje==3){
             velocidadCaida=150;
+            clearInterval(intervalo);
+            intervalo=setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje==6){
             velocidadCaida=100;
+            clearInterval(intervalo);
+            intervalo=setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje==10){
             alert("¡Proceso perfecto! Cosechaste suficientes limones para una ronda interminable de tequilas. 🍋🥃 ¡Salud al campeón!");
             clearInterval(intervalo);
@@ -97,4 +102,14 @@ function aparecerLimon(){
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+
+function reiniciar(){
+    vidas=3;
+    puntaje=0;
+    velocidadCaida=200;
+    mostrarSpan("txtPuntaje", puntaje);
+    mostrarSpan("txtVidas",vidas);
+    actualizarPantalla();
+    iniciar();
 }
