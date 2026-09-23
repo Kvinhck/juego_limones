@@ -1,27 +1,35 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atrapar Limones | Juego</title>
+
+  <title>Atrapar Limones</title>
+
   <link rel="stylesheet" href="limones.css"/>
   <script src="utils.js"></script>
 </head>
+
 <body onload="iniciar();">
-  <main class="contenedor">
+
+  <div class="contenedor">
+
     <header class="encabezado">
-      <div class="insignia">🍋</div>
+      <div class="logo-limon">🍋</div>
+
       <div>
-        <p class="eyebrow">MINI GAME</p>
+        <span class="mini-titulo">MINI GAME</span>
         <h1>Atrapar Limones</h1>
-        <p class="subtitulo">Si del cielo te caen limones...</p>
+        <p>Si del cielo te caen limones...</p>
       </div>
     </header>
 
-    <section class="tarjeta-juego">
-      <div class="info-superior">
-        <h2>¡Atrapa todos los que puedas!</h2>
-        <span class="autor">Autor: Kevin Vera</span>
+    <div class="juego">
+
+      <div class="info-juego">
+        <h2>⚡ ¡Atrapa los limones!</h2>
+        <span>Autor: Kevin Vera</span>
       </div>
 
       <div class="marco-canvas">
@@ -29,32 +37,63 @@
       </div>
 
       <div class="panel">
+
         <div class="estadistica">
-          <span class="icono">🏆</span>
+          <span class="icono-estadistica">🏆</span>
+
           <div>
-            <span class="etiqueta">Puntaje</span>
+            <small>PUNTAJE</small>
             <strong id="txtPuntaje">0</strong>
           </div>
         </div>
+
         <div class="separador"></div>
+
         <div class="estadistica">
-          <span class="icono">❤️</span>
+          <span class="icono-estadistica">❤️</span>
+
           <div>
-            <span class="etiqueta">Vidas</span>
+            <small>VIDAS</small>
             <strong id="txtVidas">3</strong>
           </div>
         </div>
+
       </div>
 
       <div class="botones">
-        <button class="btn btn-mover" onclick="moverIzquierda();">← Izquierda</button>
-        <button class="btn btn-mover" onclick="moverDerecha();">Derecha →</button>
-        <button class="btn btn-reiniciar" onclick="reiniciar();">↻ Reiniciar</button>
-        <button class="btn btn-extra" onclick="desaparecerPersonaje();">👤 Ocultar personaje</button>
+
+        <button class="btn btn-izquierda" onclick="moverIzquierda();">
+          <span class="btn-icono">◀</span>
+          Izquierda
+        </button>
+
+        <button class="btn btn-derecha" onclick="moverDerecha();">
+          Derecha
+          <span class="btn-icono">▶</span>
+        </button>
+
+        <button class="btn btn-reiniciar" onclick="reiniciar();">
+          <span class="btn-icono">↻</span>
+          Reiniciar
+        </button>
+
+        <button class="btn btn-personaje" onclick="desaparecerPersonaje();">
+          <span class="btn-icono">◉</span>
+          Ocultar personaje
+        </button>
+
       </div>
-      <p class="ayuda">Usa los botones para mover al personaje y atrapar los limones.</p>
-    </section>
-  </main>
+
+      <p class="ayuda">
+        🎮 Usa los controles para moverte y atrapar los limones
+      </p>
+
+    </div>
+
+  </div>
+
   <script src="limones.js"></script>
+
 </body>
 </html>
+```
