@@ -1,4 +1,3 @@
-```css
 /* =========================================
    ATRAPAR LIMONES - ESTILO NEON GAMER
    ========================================= */
@@ -545,4 +544,54 @@ canvas {
   }
 
 }
-```
+
+/* =========================================
+   FOTO ESQUINA SUPERIOR DERECHA
+   ========================================= */
+
+.foto-esquina {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 140px;
+  margin: 0;
+
+  text-align: center;
+  z-index: 10;
+}
+
+.foto-esquina img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border: 4px solid #fff200;
+  border-radius: 8px;
+
+  box-shadow:
+    0 0 8px #fff200,
+    0 0 20px rgba(255, 242, 0, 0.6);
+}
+
+.foto-esquina figcaption {
+  margin-top: 6px;
+
+  color: #fff200;
+  font-size: 11px;
+  font-style: italic;
+
+  text-shadow: 0 0 6px rgba(255, 242, 0, 0.7);
+}
+
+@media (max-width: 680px) {
+  .foto-esquina {
+    width: 90px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .foto-esquina figcaption {
+    font-size: 9px;
+  }
+}
