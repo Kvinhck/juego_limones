@@ -469,31 +469,6 @@ canvas {
 }
 
 /* =========================================
-   OCULTAR PERSONAJE
-   ========================================= */
-
-.btn-personaje {
-  border: 1px solid var(--azul);
-
-  background: linear-gradient(
-    135deg,
-    #153b4d,
-    #245c73
-  );
-
-  box-shadow:
-    0 0 8px rgba(85, 217, 255, 0.55),
-    0 0 20px rgba(85, 217, 255, 0.25);
-}
-
-.btn-personaje:hover {
-  box-shadow:
-    0 0 10px #55d9ff,
-    0 0 28px rgba(85, 217, 255, 0.75),
-    0 0 45px rgba(85, 217, 255, 0.3);
-}
-
-/* =========================================
    AYUDA
    ========================================= */
 
@@ -546,19 +521,14 @@ canvas {
 }
 
 /* =========================================
-   FOTO ESQUINA SUPERIOR DERECHA
+   FOTO CENTRADA
    ========================================= */
 
 .foto-esquina {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
   width: 140px;
-  margin: 0;
+  margin: 0 auto 20px;
 
   text-align: center;
-  z-index: 10;
 }
 
 .foto-esquina img {
@@ -566,32 +536,44 @@ canvas {
   width: 100%;
   height: auto;
 
-  border: 4px solid #fff200;
-  border-radius: 8px;
+  /* Esquinas con curva ligera */
+  border-radius: 16px;
+
+  /* Marco verde claro neón */
+  border: 3px solid #8dffb0;
 
   box-shadow:
-    0 0 8px #fff200,
-    0 0 20px rgba(255, 242, 0, 0.6);
+    0 0 6px #8dffb0,
+    0 0 16px rgba(141, 255, 176, 0.55),
+    0 0 30px rgba(141, 255, 176, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
-.foto-esquina figcaption {
-  margin-top: 6px;
+/* Animación al pasar el mouse (igual que los botones) */
 
-  color: #fff200;
-  font-size: 11px;
-  font-style: italic;
+.foto-esquina img:hover {
+  transform: translateY(-4px) scale(1.03);
 
-  text-shadow: 0 0 6px rgba(255, 242, 0, 0.7);
+  filter: brightness(1.2);
+
+  box-shadow:
+    0 0 10px #8dffb0,
+    0 0 25px rgba(141, 255, 176, 0.75),
+    0 0 45px rgba(141, 255, 176, 0.30);
+}
+
+.foto-esquina img:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 680px) {
   .foto-esquina {
-    width: 90px;
-    top: 8px;
-    right: 8px;
-  }
-
-  .foto-esquina figcaption {
-    font-size: 9px;
+    width: 110px;
   }
 }
